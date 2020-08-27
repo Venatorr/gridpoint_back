@@ -1,0 +1,23 @@
+version: "3"
+
+services:     
+  back:
+    image: venatorr/gridpoint_back
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./gridpoint_back:/gridpoint_back
+    ports:
+      - "8000:8000"
+  front:
+    image: venatorr/gridpoint_front
+    command: >
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+    volumes:
+      - './gridpoint_front:/usr/src/app' 
+    ports: 
+      - '4200:4200'
+  agent:
+    image: venatorr/gridpoint_agent
+    command: python background.py
+    depends_on:
+      - back
