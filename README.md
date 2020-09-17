@@ -8,3 +8,5 @@ Gridpoint test task, Backend.
 Все три части выложены в DockerHub и запускаются с помощью Docker-compose.
 
 Репозиторий бэкенда приложения.
+https://github.com/Venatorr/gridpoint_front - фронт
+https://github.com/Venatorr/gridpoint_agent - агент
