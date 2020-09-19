@@ -10,12 +10,8 @@ services:
       - "8000:8000"
   front:
     image: venatorr/gridpoint_front
-    command: >
-      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
-    volumes:
-      - './gridpoint_front:/usr/src/app' 
     ports: 
-      - '4200:4200'
+      - '8080:80'
   agent:
     image: venatorr/gridpoint_agent
     command: python background.py
